@@ -38,9 +38,20 @@ map(
   { silent = true }
 )
 
--- Terminal: escape to normal mode
-map("t", "<C-q>", [[<C-\><C-n>]])
+-- Tabs
+map("n", "<C-Up>", ":tabnew<CR>")
+map("n", "<leader><Down>", ":tabclose<CR>")
+map("n", "<C-Right>", ":+tabnext<CR>")
+map("n", "<C-Left>", ":-tabnext<CR>")
+map("n", "<M-Left>", ":tabmove -1<CR>")
+map("n", "<M-Right>", ":tabmove +1<CR>")
+
+-- Terminal: escape to normal mode with double escape
+map("t", "<Esc><Esc>", [[<C-\><C-n>]])
 
 -- Disable PageUp / PageDown (Nordic keyboard sanity)
 map({ "n", "i", "v" }, "<PageUp>", "<Nop>")
 map({ "n", "i", "v" }, "<PageDown>", "<Nop>")
+
+-- Use system clipboard
+vim.opt.clipboard:append("unnamedplus")
