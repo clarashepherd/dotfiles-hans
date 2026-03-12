@@ -49,9 +49,5 @@ map("n", "<M-Right>", ":tabmove +1<CR>")
 -- Terminal: escape to normal mode with double escape
 map("t", "<Esc><Esc>", [[<C-\><C-n>]])
 
--- Disable PageUp / PageDown (Nordic keyboard sanity)
-map({ "n", "i", "v" }, "<PageUp>", "<Nop>")
-map({ "n", "i", "v" }, "<PageDown>", "<Nop>")
-
 -- Use system clipboard
 vim.opt.clipboard:append("unnamedplus")
