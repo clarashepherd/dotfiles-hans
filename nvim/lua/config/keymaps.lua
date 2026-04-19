@@ -40,3 +40,7 @@ map("t", "<Esc><Esc>", [[<C-\><C-n>]])
 
 -- Use system clipboard
 vim.opt.clipboard:append("unnamedplus")
+
+-- Go to relative lines: j goes up, k goes down
+vim.keymap.set('n', 'j', "v:count > 0 ? 'k' : 'j'", { expr = true })
+vim.keymap.set('n', 'k', "v:count > 0 ? 'j' : 'k'", { expr = true })
