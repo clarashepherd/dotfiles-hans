@@ -10,17 +10,6 @@ map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-o>", "<C-o>zz")
 map("n", "<C-i>", "<C-i>zz")
 
--- Copy to clipboard
-map("v", "<leader>y", '"+y')
-map("n", "<leader>Y", '"+yg_')
-map("n", "<leader>y", '"+y')
-
--- Paste from clipboard
-map("n", "<leader>p", '"+p')
-map("n", "<leader>P", '"+P')
-map("v", "<leader>p", '"+p')
-map("v", "<leader>P", '"+P')
-
 -- Substitute all at cursor
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/]])
 
