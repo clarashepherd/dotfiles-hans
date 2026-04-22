@@ -13,6 +13,7 @@
       ./services/bash.nix
       ./services/neovim.nix
       ./services/aliasx.nix
+      ./services/tmux.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -99,7 +100,6 @@
     wofi
     dunst
     hyprpaper
-    tmux
     waybar
     lazygit
     cmake
