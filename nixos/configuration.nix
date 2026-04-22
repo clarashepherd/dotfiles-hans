@@ -15,6 +15,7 @@
       ./services/aliasx.nix
       ./services/tmux.nix
       ./services/github-copilot.nix
+      ./services/openconnect.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
