@@ -12,6 +12,7 @@
       ./services/network.nix
       ./services/bash.nix
       ./services/neovim.nix
+      ./services/aliasx.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
