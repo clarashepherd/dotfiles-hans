@@ -7,8 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./intune.nix
+      ./hardware/work-pc.nix
+      ./services/git.nix
+      ./services/network.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -19,22 +20,6 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
- boot.initrd.luks.devices.cryptroot.device = "/dev/disk/by-uuid/87836e51-e6cf-4be6-a9ee-6a55e9fe1cd4";
-  boot.initrd.services.lvm.enable = true;
-
-  networking.hostName = "nixos"; # Define your hostname.
-  networking.networkmanager.enable = false;
-  networking.wireless.iwd.enable = true;
-
-  networking.wireless.iwd.settings = {
-    Network = {
-      EnableIPv6 = true;
-    };
-    Settings = {
-      AutoConnect = true;
-    };
-  };
 
   # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
@@ -89,7 +74,7 @@
 
   # docker setup
   virtualisation.docker.enable = true;
-  # virtualisation.docker.rootless.enable = true;
+  virtualisation.docker.rootless.enable = true;
   # virtualisation.docker.storageDriver = "btrfs";
 
   users.users.clara = {
