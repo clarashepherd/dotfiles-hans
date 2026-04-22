@@ -14,6 +14,7 @@
       ./services/neovim.nix
       ./services/aliasx.nix
       ./services/tmux.nix
+      ./services/github-copilot.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -115,7 +116,6 @@
     python3
     gh
     tio
-    github-copilot-cli
     adwaita-icon-theme
     hyprsunset
     openssl
