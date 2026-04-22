@@ -101,6 +101,8 @@
     waybar
     lazygit
     cmake
+    libgcc
+    gcc-arm-embedded
     fastfetch
     pavucontrol
     playerctl
