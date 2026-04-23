@@ -5,7 +5,7 @@
         enable = true;
         interactiveShellInit = ''
             if [ -f "$HOME/.secrets/github-token" ]; then
-                export GITHUB_TOKEN="$(cat $HOME/.secrets/github-token)"
+                export GITHUB_TOKEN="$(tr -d '\n' < $HOME/.secrets/github-token)"
             fi
             if [ -d "$HOME/repos/beo-scripts" ]; then
                 export PATH="$HOME/repos/beo-scripts:$PATH"
