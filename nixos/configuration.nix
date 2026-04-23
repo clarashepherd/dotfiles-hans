@@ -18,9 +18,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-# FIXME: only required for work pc
-  bogo.intune.enable = true;
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
