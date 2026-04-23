@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware/work-pc.nix
       ./services/git.nix
+      ./services/kernel.nix
       ./services/network.nix
       ./services/bash.nix
       ./services/neovim.nix
