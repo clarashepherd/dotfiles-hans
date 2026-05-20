@@ -6,7 +6,8 @@
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
-      ../services/intune.nix
+    ../services/intune.nix
+    ../services/wireguard.nix
     ];
 
   bogo.intune.enable = true;
