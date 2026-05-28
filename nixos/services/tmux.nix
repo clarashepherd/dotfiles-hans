@@ -4,7 +4,7 @@
     programs.tmux = {
         enable = true;
         extraConfig = ''
-          run-shell "tmux source-file #{HOME}/repos/dotfiles/tmux.conf"
+          run-shell "tmux source-file #{HOME}/repos/dotfiles/.tmux.conf"
         '';
     };
 
@@ -14,6 +14,6 @@
     ];
 
     systemd.tmpfiles.rules = lib.concatMap
-        (user: [ "L ${user.home}/.tmate.conf - - - - ${user.home}/repos/dotfiles/tmux.conf" ])
+        (user: [ "L ${user.home}/.tmate.conf - - - - ${user.home}/repos/dotfiles/.tmux.conf" ])
         (lib.attrValues (lib.filterAttrs (_: u: u.isNormalUser) config.users.users));
 }
