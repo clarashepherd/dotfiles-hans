@@ -83,12 +83,16 @@
   # docker setup
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless.enable = true;
+  virtualisation.docker.package = pkgs.docker_29;
+  virtualisation.docker.rootless.package = pkgs.docker_29;
   # virtualisation.docker.storageDriver = "btrfs";
+
+  users.groups.plugdev = {};
 
   users.users.clara = {
     isNormalUser = true;
     home = "/home/clara";
-    extraGroups = [ "wheel" "docker" "uucp" "dialout" "video" "netdev" ];
+    extraGroups = [ "wheel" "docker" "uucp" "dialout" "video" "netdev" "plugdev" ];
     packages = with pkgs; [
        tree
      ];
@@ -97,6 +101,7 @@
   programs.firefox.enable = true;
   programs.hyprland.enable = true;
   programs.steam.enable = true;
+  programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
     wget
@@ -120,6 +125,7 @@
     libnotify
     jq
     python3
+    python3Packages.pip
     gh
     tio
     adwaita-icon-theme
@@ -136,6 +142,12 @@
     unzip
     tmate
     sl
+    killall
+    nodejs_22
+    htop
+    usbutils
+    texstudio
+    texlive.combined.scheme-full
  ];
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
