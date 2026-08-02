@@ -8,6 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ../services/intune.nix
     ../services/wireguard.nix
+    ../services/openocd.nix
     ];
 
   bogo.intune.enable = true;
