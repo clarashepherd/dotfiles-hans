@@ -60,7 +60,7 @@
   ];
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "gb";
+  services.xserver.xkb.layout = "gb,dk";
   services.dbus.enable = true;
 
   hardware.enableRedistributableFirmware = true;
@@ -149,6 +149,8 @@
     texstudio
     texlive.combined.scheme-full
     cheese
+    anki
+    vlc
  ];
 
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
